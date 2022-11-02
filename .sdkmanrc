@@ -1,0 +1,2 @@
+# Enable auto-env through the sdkman_auto_env config
+java=22.2.r17-grl

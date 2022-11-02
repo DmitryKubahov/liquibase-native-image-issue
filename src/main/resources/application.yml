@@ -1,0 +1,24 @@
+micronaut:
+  application:
+    name: liquibaseNativeImageIssue
+netty:
+  default:
+    allocator:
+      max-order: 3
+
+datasources:
+  default:
+    url: 'jdbc:h2:mem:liquibaseDisabledDb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=TRUE'
+    username: 'sa'
+    password: ''
+    driverClassName: 'org.h2.Driver'
+
+liquibase:
+  datasources:
+    default:
+      change-log: classpath:db/changelog.xml
+
+endpoints:
+  liquibase:
+    enabled: true
+    sensitive: false
